@@ -4,5 +4,9 @@
     "express": "^4.17.1",
     "@mapbox/node-pre-gyp": "1.x",
     "wrtc": "^0.4.7"
+  },
+  "engines": {
+    "node": "17.2.0",
+    "npm": "8.1.4"
   }
 }
