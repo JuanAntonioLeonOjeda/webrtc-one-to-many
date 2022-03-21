@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const webrtc = require("wrtc");
+require('dotenv').config()
+
 
 let senderStream;
 
-app.use(express.static("public/index.html"));
+app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -55,4 +57,4 @@ function handleTrackEvent(e, peer) {
   senderStream = e.streams[0];
 }
 
-app.listen(5000, () => console.log("server started"));
+app.listen(process.env.PORT, () => console.log("server started"));
