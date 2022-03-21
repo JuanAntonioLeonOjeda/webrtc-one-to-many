@@ -1,1 +1,1 @@
-web: node ./public/viewer.html
+web: node server.js
