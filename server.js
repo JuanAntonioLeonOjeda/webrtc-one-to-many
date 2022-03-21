@@ -10,7 +10,7 @@ app.use("/broadcast", require("./public/index.html"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post("/consumer", async ({ body }, res) => {
+app.post("/streaming", async ({ body }, res) => {
   const peer = new webrtc.RTCPeerConnection({
     iceServers: [
       {
