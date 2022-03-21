@@ -5,7 +5,8 @@ const webrtc = require("wrtc");
 
 let senderStream;
 
-app.use(express.static("public"));
+const app = express().use("/broadcast", require("./public/index.html"));
+// app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -29,10 +30,6 @@ app.post("/consumer", async ({ body }, res) => {
   };
 
   res.json(payload);
-});
-
-app.get("/broadcast", async (req, res) => {
-  console.log(res);
 });
 
 app.post("/broadcast", async ({ body }, res) => {
