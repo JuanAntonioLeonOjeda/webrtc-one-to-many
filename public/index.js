@@ -17,6 +17,11 @@ function createPeer() {
       {
         urls: "stun:stun.stunprotocol.org",
       },
+      {
+        urls: "turn:numb.viagenie.ca",
+        credential: "videolover",
+        username: "serallapdivad@gmail.com"
+      }
     ],
   });
   peer.onnegotiationneeded = () => handleNegotiationNeededEvent(peer);
