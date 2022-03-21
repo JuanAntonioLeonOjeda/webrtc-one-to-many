@@ -5,7 +5,7 @@ const webrtc = require("wrtc");
 
 let senderStream;
 
-const app = express().use("/broadcast", require("./public/index.html"));
+app.use("/broadcast", require("./public/index.html"));
 // app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
