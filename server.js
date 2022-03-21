@@ -5,12 +5,12 @@ const webrtc = require("wrtc");
 
 let senderStream;
 
-app.use("/broadcast", require("./public/index.html"));
+app.use("/streaming", require("./public/index.html"));
 // app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post("/streaming", async ({ body }, res) => {
+app.post("/consumer", async ({ body }, res) => {
   const peer = new webrtc.RTCPeerConnection({
     iceServers: [
       {
