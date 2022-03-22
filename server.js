@@ -17,6 +17,21 @@ app.post("/consumer", async ({ body }, res) => {
       {
         urls: "stun:stun.stunprotocol.org",
       },
+      {
+        urls: "turn:openrelay.metered.ca:80",
+        username: "openrelayproject",
+        credential: "openrelayproject"
+      },
+      {
+        urls: "turn:openrelay.metered.ca:443",
+        username: "openrelayproject",
+        credential: "openrelayproject"
+      },
+      {
+        urls: "turn:openrelay.metered.ca:443?transport=tcp",
+        username: "openrelayproject",
+        credential: "openrelayproject"
+      }
     ],
   });
   const desc = new webrtc.RTCSessionDescription(body.sdp);
@@ -39,6 +54,21 @@ app.post("/broadcast", async ({ body }, res) => {
       {
         urls: "stun:stun.stunprotocol.org",
       },
+      {
+        urls: "turn:openrelay.metered.ca:80",
+        username: "openrelayproject",
+        credential: "openrelayproject"
+      },
+      {
+        urls: "turn:openrelay.metered.ca:443",
+        username: "openrelayproject",
+        credential: "openrelayproject"
+      },
+      {
+        urls: "turn:openrelay.metered.ca:443?transport=tcp",
+        username: "openrelayproject",
+        credential: "openrelayproject"
+      }
     ],
   });
   peer.ontrack = (e) => handleTrackEvent(e, peer);

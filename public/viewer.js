@@ -16,10 +16,20 @@ function createPeer() {
                 urls: "stun:stun.stunprotocol.org"
             },
             {
-                urls: "turn:numb.viagenie.ca",
-                credential: "videolover",
-                username: "serallapdivad@gmail.com"
-            }
+                urls: "turn:openrelay.metered.ca:80",
+                username: "openrelayproject",
+                credential: "openrelayproject"
+              },
+              {
+                urls: "turn:openrelay.metered.ca:443",
+                username: "openrelayproject",
+                credential: "openrelayproject"
+              },
+              {
+                urls: "turn:openrelay.metered.ca:443?transport=tcp",
+                username: "openrelayproject",
+                credential: "openrelayproject"
+              }
         ]
     });
     peer.ontrack = handleTrackEvent;
