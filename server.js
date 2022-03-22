@@ -76,7 +76,11 @@ app.post("/broadcast", async ({ body }, res) => {
 });
 
 function handleTrackEvent(e, peer) {
+  console.log('evento track', e)
+  console.log(peer)
   senderStream = e.streams[0];
+  console.log(senderStream)
+  console.log(e.streams[0])
 }
 
 app.listen(process.env.PORT, () => console.log("server started"));

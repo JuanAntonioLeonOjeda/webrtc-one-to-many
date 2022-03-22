@@ -58,7 +58,8 @@ async function handleNegotiationNeededEvent(peer) {
 }
 
 function handleTrackEvent(e) {
+    console.log('evento track: ', e)
     document.getElementById("video").srcObject = e.streams[0];
-    console.log(e, e.streams, e.streams[0])
+    console.log(e.streams, e.streams[0])
 };
 
