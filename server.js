@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const webrtc = require("wrtc");
+const cors = require('cors')
 require('dotenv').config()
 
 
@@ -10,6 +11,7 @@ let senderStream;
 app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors())
 
 app.post("/consumer", async ({ body }, res) => {
   const peer = new webrtc.RTCPeerConnection({
