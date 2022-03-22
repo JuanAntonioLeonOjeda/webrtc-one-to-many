@@ -5,13 +5,21 @@ window.onload = () => {
 };
 
 async function init() {
+  console.log('iniciado')
   const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+  console.log(stream)
   document.getElementById("video").srcObject = stream;
   const peer = createPeer();
-  stream.getTracks().forEach((track) => peer.addTrack(track, stream));
+  console.log('peer creado: ', peer)
+  stream.getTracks().forEach((track) => {
+    console.log('track: ',track)
+    peer.addTrack(track, stream)
+  });
+  console.log('stream después de getTracks:', stream)
 }
 
 function createPeer() {
+  console.log('peer creándose')
   const peer = new RTCPeerConnection({
     iceServers: [
       {
@@ -40,13 +48,16 @@ function createPeer() {
 }
 
 async function handleNegotiationNeededEvent(peer) {
+  console.log('negociación')
   const offer = await peer.createOffer();
+  console.log('offer: ', offer)
   await peer.setLocalDescription(offer);
   const payload = {
     sdp: peer.localDescription,
   };
-
+  console.log('payload: ', payload)
   const { data } = await axios.post("/broadcast", payload);
   const desc = new RTCSessionDescription(data.sdp);
+  console.log('desc: ', desc)
   peer.setRemoteDescription(desc).catch((e) => console.log(e));
 }
