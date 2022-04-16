@@ -1,17 +1,16 @@
 {
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
     "@mapbox/node-pre-gyp": "1.x",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
     "wrtc": "^0.4.7"
   },
   "name": "webrtc-one-to-many",
   "description": "to run the app",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JuanAntonioLeonOjeda/webrtc-one-to-many.git"
@@ -22,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/JuanAntonioLeonOjeda/webrtc-one-to-many/issues"
   },
-  "homepage": "https://github.com/JuanAntonioLeonOjeda/webrtc-one-to-many#readme"
+  "homepage": "https://github.com/JuanAntonioLeonOjeda/webrtc-one-to-many#readme",
+  "engines": {
+    "node": "17.2.0",
+    "npm": "8.1.4"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
 }
