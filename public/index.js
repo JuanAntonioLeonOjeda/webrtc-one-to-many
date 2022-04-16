@@ -36,5 +36,3 @@ async function handleNegotiationNeededEvent(peer) {
     const desc = new RTCSessionDescription(data.sdp);
     peer.setRemoteDescription(desc).catch(e => console.log(e));
 }
-
-

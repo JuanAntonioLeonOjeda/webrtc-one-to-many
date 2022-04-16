@@ -4,5 +4,23 @@
     "express": "^4.17.1",
     "@mapbox/node-pre-gyp": "1.x",
     "wrtc": "^0.4.7"
-  }
+  },
+  "name": "webrtc-one-to-many",
+  "description": "to run the app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanAntonioLeonOjeda/webrtc-one-to-many.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanAntonioLeonOjeda/webrtc-one-to-many/issues"
+  },
+  "homepage": "https://github.com/JuanAntonioLeonOjeda/webrtc-one-to-many#readme"
 }
